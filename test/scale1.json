@@ -1,0 +1,33 @@
+{
+    "id": "knöck",
+    "name": [
+        {
+            "lang": "de",
+            "value": "Hacklbuck"
+        }
+    ],
+    "description": [
+        {
+            "lang": "de",
+            "value": "Hacklbuck knatter isse booh."
+        }
+    ],
+    "scaleType": "BASE",
+    "typeParameters": {
+        "method": "SCORE_RATIO",
+        "items": [
+            {
+                "id": "JU7662804"
+            },
+            {
+                "id": "JU7662801"
+            },
+            {
+                "id": "JU7662802"
+            },
+            {
+                "id": "JU7662803"
+            }
+        ]
+    }
+}
