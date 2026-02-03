@@ -40,7 +40,9 @@
   },
   "required": [
     "id",
-    "name"
+    "name",
+    "scaleType",
+    "typeParameters"
   ],
   "additionalProperties": false,
   "$defs": {
