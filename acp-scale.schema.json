@@ -1,5 +1,5 @@
 {
-  "$id": "acp-scale@0.2",
+  "$id": "acp-scale@0.3",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Assessment Content Package: Scale",
   "description": "Specification for assessment content package scale.",
@@ -7,7 +7,8 @@
   "properties": {
     "id": {
       "description": "Identifier referred by other scales and assessment output.",
-      "type": "string"
+      "type": "string",
+      "examples": ["bs2004.ma.9.global", "bs2024.ma.9.3", "fcr.de.reading"]
     },
     "name": {
       "$ref": "#/$defs/languageTaggedText"
@@ -36,6 +37,56 @@
           "$ref": "#/$defs/parametersAGGREGATED"
         }
       ]
+    },
+    "relatedVocabularies": {
+      "description": "Refers to public vocabularies to map the proficiency level to well known concepts",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "description": "URL to access the related vocabulary",
+            "type": "string"
+          },
+          "name": {
+            "description": "Shorthand title or name to understand the relation quickly",
+            "type": "string"
+          },
+          "values": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": "number"
+                },
+                "url": {
+                  "type": "string"
+                },
+                "relationShip": {
+                  "type": "string",
+                  "enum": [
+                    "SAME_AS",
+                    "ALIKE"
+                  ],
+                  "default": "SAME_AS"
+                }
+              },
+              "required": [
+                "value",
+                "url"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 1
+          }
+        },
+        "required": [
+          "values",
+          "url"
+        ],
+        "additionalProperties": false
+      }
     }
   },
   "required": [
@@ -300,56 +351,6 @@
         },
         "elseValueDescription": {
           "$ref": "#/$defs/languageTaggedText"
-        },
-        "relatedVocabularies": {
-          "description": "Refers to public vocabularies to map the proficiency level to well known concepts",
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "url": {
-                "description": "URL to access the related vocabulary",
-                "type": "string"
-              },
-              "name": {
-                "description": "Shorthand title or name to understand the relation quickly",
-                "type": "string"
-              },
-              "values": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "value": {
-                      "type": "number"
-                    },
-                    "url": {
-                      "type": "string"
-                    },
-                    "relationShip": {
-                      "type": "string",
-                      "enum": [
-                        "SAME_AS",
-                        "ALIKE"
-                      ],
-                      "default": "SAME_AS"
-                    }
-                  },
-                  "required": [
-                    "value",
-                    "url"
-                  ],
-                  "additionalProperties": false
-                },
-                "minItems": 1
-              }
-            },
-            "required": [
-              "values",
-              "url"
-            ],
-            "additionalProperties": false
-          }
         }
       },
       "required": [
