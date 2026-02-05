@@ -37,56 +37,6 @@
           "$ref": "#/$defs/parametersAGGREGATED"
         }
       ]
-    },
-    "relatedVocabularies": {
-      "description": "Refers to public vocabularies to map the proficiency level to well known concepts",
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "url": {
-            "description": "URL to access the related vocabulary",
-            "type": "string"
-          },
-          "name": {
-            "description": "Shorthand title or name to understand the relation quickly",
-            "type": "string"
-          },
-          "values": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "value": {
-                  "type": "number"
-                },
-                "url": {
-                  "type": "string"
-                },
-                "relationShip": {
-                  "type": "string",
-                  "enum": [
-                    "SAME_AS",
-                    "ALIKE"
-                  ],
-                  "default": "SAME_AS"
-                }
-              },
-              "required": [
-                "value",
-                "url"
-              ],
-              "additionalProperties": false
-            },
-            "minItems": 1
-          }
-        },
-        "required": [
-          "values",
-          "url"
-        ],
-        "additionalProperties": false
-      }
     }
   },
   "required": [
@@ -288,12 +238,40 @@
       ],
       "additionalProperties": false
     },
+    "newValue": {
+      "description": "Properties for the new value for scaleType DERIVED",
+      "type": "object",
+      "properties": {
+        "value": {
+          "description": "Value as outcome of this scale",
+          "type": "number"
+        },
+        "label": {
+          "$ref": "#/$defs/languageTaggedText"
+        },
+        "description": {
+          "$ref": "#/$defs/languageTaggedText"
+        },
+        "publicVocabularyUrl": {
+          "description": "The specific vocabulary entry url for reference.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "value"
+      ],
+      "additionalProperties": false
+    },
     "parametersDERIVED": {
       "description": "These parameters will be used for scaleType DERIVED",
       "type": "object",
       "properties": {
         "source": {
           "description": "Id of the scale providing the value for this derived scale.",
+          "type": "string"
+        },
+        "publicVocabularyEntry": {
+          "description": "Url-suffix for a specific entry of a public vocabulary.",
           "type": "string"
         },
         "mappings": {
@@ -322,14 +300,7 @@
                 "minItems": 1
               },
               "newValue": {
-                "description": "Value as outcome of this scale",
-                "type": "number"
-              },
-              "valueLabel": {
-                "$ref": "#/$defs/languageTaggedText"
-              },
-              "valueDescription": {
-                "$ref": "#/$defs/languageTaggedText"
+                "$ref": "#/$defs/newValue"
               }
             },
             "required": [
@@ -341,21 +312,14 @@
           },
           "minItems": 1
         },
-        "elseValue": {
-          "description": "Value if no mapping matches",
-          "type": "number",
-          "default": 0
-        },
-        "elseValueLabel": {
-          "$ref": "#/$defs/languageTaggedText"
-        },
-        "elseValueDescription": {
-          "$ref": "#/$defs/languageTaggedText"
+        "else": {
+          "$ref": "#/$defs/newValue"
         }
       },
       "required": [
         "source",
-        "mappings"
+        "mappings",
+        "else"
       ],
       "additionalProperties": false
     }
