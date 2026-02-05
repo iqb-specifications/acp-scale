@@ -252,8 +252,8 @@
         "description": {
           "$ref": "#/$defs/languageTaggedText"
         },
-        "publicVocabularyUrl": {
-          "description": "The specific vocabulary entry url for reference.",
+        "publicVocabularyEntry": {
+          "description": "Url-suffix for a specific entry of a public vocabulary.",
           "type": "string"
         }
       },
@@ -270,8 +270,8 @@
           "description": "Id of the scale providing the value for this derived scale.",
           "type": "string"
         },
-        "publicVocabularyEntry": {
-          "description": "Url-suffix for a specific entry of a public vocabulary.",
+        "publicVocabularyUrl": {
+          "description": "Url of a public vocabulary matching this scale.",
           "type": "string"
         },
         "mappings": {
