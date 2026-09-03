@@ -1,21 +1,21 @@
 {
-  "name": "@iqbspecs/acp-scale",
+  "name": "@iqbspecs/acp-scale-base",
   "author": "IQB - Institut zur Qualitätsentwicklung im Bildungswesen",
   "license": "CC0-1.0",
-  "description": "Specification for assessment content package: Scale.",
+  "description": "Specification for assessment content package: Base Scale.",
   "scripts": {
-    "validate-schema": "test-schema test acp-scale.schema.json",
+    "validate-schema": "test-schema test acp-scale-base.schema.json",
     "async_generate": "asyncapi generate fromTemplate asyncapi.yaml @asyncapi/html-template --use-new-generator --param singleFile=false --param config=asyncapi.config.json -o ./public --force-write",
     "generate_docs": "npm run async_generate && cat add.css >> ./public/css/global.min.css"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/iqb-specifications/acp-scale.git"
+    "url": "git+https://github.com/iqb-specifications/acp-scale-base.git"
   },
   "bugs": {
-    "url": "https://github.com/iqb-specifications/acp-scale/issues"
+    "url": "https://github.com/iqb-specifications/acp-scale-base/issues"
   },
-  "homepage": "https://github.com/iqb-specifications/acp-scale#readme",
+  "homepage": "https://github.com/iqb-specifications/acp-scale-base#readme",
   "devDependencies": {
     "@iqbspecs/validate-json": "^0.4.0",
     "@asyncapi/cli": "^4.1.1",

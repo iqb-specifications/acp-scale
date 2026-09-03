@@ -1,9 +1,9 @@
 asyncapi: 3.0.0
-id: "urn:iqb-specifications:acp-scale"
+id: "urn:iqb-specifications:acp-scale-base"
 defaultContentType: application/json
 info:
-  title: acp-scale
-  description: "Specification for assessment content package: Scale."
+  title: "acp-scale-base"
+  description: "Specification for assessment content package: Base Scale."
   license:
     name: CC0 1.0
     url: https://creativecommons.org/publicdomain/zero/1.0/
@@ -17,8 +17,8 @@ channels:
     messages:
       select_schema:
         payload:
-          $ref: "#/components/schemas/acp-scale"
+          $ref: "#/components/schemas/acp-scale-base"
 components:
   schemas:
-    acp-scale:
-      $ref: "acp-scale.schema.json"
+    acp-scale-base:
+      $ref: "acp-scale-base.schema.json"
