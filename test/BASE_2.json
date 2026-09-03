@@ -12,47 +12,45 @@
       "value": "Demo Skala vom Typ 'BASE' für Metrik der Bildungsstandards (WLE)"
     }
   ],
-  "scaleType": "BASE",
-  "typeParameters": {
-    "method": "WLE",
-    "items": [
-      {
-        "id": "JU7662804",
-        "parameters": [
-          {
-            "key": "LOGIT_FULL_CREDIT",
-            "value": "0.3345"
-          }
-        ]
-      },
-      {
-        "id": "JU7662801",
-        "parameters": [
-          {
-            "key": "LOGIT_FULL_CREDIT",
-            "value": "0.357845"
-          }
-        ]
-      },
-      {
-        "id": "JU7662802",
-        "parameters": [
-          {
-            "key": "LOGIT_FULL_CREDIT",
-            "value": "0.43945"
-          }
-        ],
-        "weight": 2
-      },
-      {
-        "id": "JU7662803",
-        "parameters": [
-          {
-            "key": "LOGIT_FULL_CREDIT",
-            "value": "0.1305"
-          }
-        ]
-      }
-    ]
-  }
+  "method": "WLE",
+  "items": [
+    {
+      "id": "JU7662804",
+      "parameters": [
+        {
+          "key": "LOGIT_FULL_CREDIT",
+          "value": "0.3345"
+        }
+      ]
+    },
+    {
+      "id": "JU7662801",
+      "parameters": [
+        {
+          "key": "LOGIT_FULL_CREDIT",
+          "value": "0.357845"
+        }
+      ]
+    },
+    {
+      "id": "JU7662802",
+      "parameters": [
+        {
+          "key": "LOGIT_FULL_CREDIT",
+          "value": "0.43945"
+        }
+      ],
+      "weight": 2
+    },
+    {
+      "id": "JU7662803",
+      "parameters": [
+        {
+          "key": "LOGIT_FULL_CREDIT",
+          "value": "0.1305"
+        }
+      ]
+    }
+  ]
 }
+

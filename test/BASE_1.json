@@ -20,25 +20,22 @@
       "value": "Demo scale BASE for full credit ratio"
     }
   ],
-  "scaleType": "BASE",
-  "typeParameters": {
-    "method": "SCORE_RATIO",
-    "methodParameters": {
-      "maxValue": 8
+  "method": "SCORE_RATIO",
+  "methodParameters": {
+    "maxValue": 8
+  },
+  "items": [
+    {
+      "id": "JU7662804"
     },
-    "items": [
-      {
-        "id": "JU7662804"
-      },
-      {
-        "id": "JU7662801"
-      },
-      {
-        "id": "JU7662802"
-      },
-      {
-        "id": "JU7662803"
-      }
-    ]
-  }
+    {
+      "id": "JU7662801"
+    },
+    {
+      "id": "JU7662802"
+    },
+    {
+      "id": "JU7662803"
+    }
+  ]
 }
